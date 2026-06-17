@@ -1,36 +1,32 @@
 # System Overview
 
-## Architecture Diagram
-
 ```mermaid
-flowchart TB
-  Visitor[Visitor] --> Website[ShieldOps Security Website]
+flowchart TD
+    V[Visitor] --> W[FinEdge Website]
+    W --> H[Home Page]
+    W --> F[Features Page]
+    W --> P[Pricing Page]
+    W --> S[Security Page]
+    W --> C[Contact Page]
 
-  Website --> Home[Home Page]
-  Website --> Solutions[Solutions Page]
-  Website --> Platform[Platform Page]
-  Website --> CaseStudies[Case Studies Page]
-  Website --> SecurityReport[Security Report Page]
-  Website --> Contact[Contact Page]
+    H --> Hero
+    H --> FD[Finance Dashboard]
+    H --> PW[Payment Workflow]
+    H --> Feat[Features]
+    H --> An[Analytics]
+    H --> Sec[Security]
+    H --> Pr[Pricing]
+    H --> CTA[CTA]
 
-  Home --> Hero[Hero]
-  Home --> ThreatDashboard[Threat Dashboard]
-  Home --> SecurityMetrics[Security Metrics]
-  Home --> SolutionsSection[Solutions]
-  Home --> PlatformWorkflow[Platform Workflow]
-  Home --> Compliance[Compliance]
-  Home --> CaseStudiesSection[Case Studies]
-  Home --> CTA[CTA]
-
-  Contact --> ContactForm[Consultation Form]
-  ContactForm --> FutureCRM[Future CRM Integration]
-  ContactForm --> FutureEmail[Future Email Notification]
+    C --> Form[Demo Request Form]
+    Form --> CRM[Future CRM Integration]
+    Form --> Email[Future Email Notification]
 ```
 
 ## Explanation
 
-Visitors arrive at the ShieldOps Security marketing website and navigate across six primary routes. The home page serves as the main conversion funnel, combining product demonstration (threat dashboard), trust building (metrics, compliance, case studies), and repeated calls to action.
+Visitors arrive at the FinEdge website and navigate across five pages: Home, Features, Pricing, Security, and Contact. The home page is the primary conversion surface, combining product positioning (Hero), proof of capability (Finance Dashboard, Payment Workflow, Analytics), trust signals (Security), commercial intent (Pricing), and repeated calls to action.
 
-The contact page captures consultation requests through a structured form. In a production deployment, this form would connect to a CRM and email notification system — currently UI-only for portfolio demonstration.
+The contact page captures demo requests through a structured form. In a production deployment, submissions would route to a CRM system and trigger email notifications to the sales team.
 
-All pages share a common layout (navbar + footer) and pull content from static TypeScript data files, making the site fast to deploy and easy to maintain.
+All pages share a common layout (Navbar + Footer) and draw content from static data files in the `data/` directory.

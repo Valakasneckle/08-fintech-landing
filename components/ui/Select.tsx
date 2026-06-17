@@ -7,23 +7,16 @@ type SelectProps = React.SelectHTMLAttributes<HTMLSelectElement> & {
 };
 
 export function Select({ label, options, error, className, id, ...props }: SelectProps) {
-  const inputId = id ?? props.name;
-
+  const inputId = id ?? label.toLowerCase().replace(/\s+/g, "-");
   return (
-    <div>
-      <label htmlFor={inputId} className="block text-sm font-medium text-foreground">
+    <div className="space-y-2">
+      <label htmlFor={inputId} className="block text-sm font-medium text-primary">
         {label}
-        {props.required && (
-          <span className="text-accent-red ml-1" aria-hidden="true">
-            *
-          </span>
-        )}
       </label>
       <select
         id={inputId}
         className={cn(
-          "mt-2 block w-full rounded-lg border border-card-border bg-background px-4 py-3 text-sm text-foreground transition-colors focus:border-accent-cyan min-h-[44px] cursor-pointer",
-          error && "border-accent-red",
+          "w-full rounded-xl border border-border bg-white px-4 py-3 text-sm text-primary focus:border-accent-blue focus:outline-none focus:ring-2 focus:ring-accent-blue/20",
           className
         )}
         {...props}
@@ -34,11 +27,7 @@ export function Select({ label, options, error, className, id, ...props }: Selec
           </option>
         ))}
       </select>
-      {error && (
-        <p className="mt-1 text-xs text-accent-red" role="alert">
-          {error}
-        </p>
-      )}
+      {error && <p className="text-sm text-red-600">{error}</p>}
     </div>
   );
 }

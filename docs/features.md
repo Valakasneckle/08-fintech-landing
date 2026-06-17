@@ -1,67 +1,60 @@
-# Features
+# Features Documentation
 
-## Website Features
+## Fintech Product Features
 
-- Responsive homepage with full marketing funnel
-- Dedicated solutions page (`/solutions`)
-- Platform workflow page (`/platform`)
-- Case studies page (`/case-studies`)
-- Security report page (`/security-report`)
-- Contact / consultation page (`/contact`)
-- Sticky navigation with mobile menu
-- Footer with solution and compliance links
-- Skip-to-content link for accessibility
-- Per-page SEO metadata
+- Payment management with real-time status tracking
+- Invoice automation with branded templates
+- Cash flow insights and runway forecasting
+- Expense tracking with category breakdowns
+- Financial analytics with trend visualization
+- Secure transactions with encrypted workflows
+- Team permissions with role-based access
+- Real-time reporting and export capabilities
 
-## Cybersecurity Presentation Features
+## Payment Workflow Features
 
-- SOC monitoring and 24/7 coverage messaging
-- Threat detection and vulnerability scanning services
-- Incident response and cloud security offerings
-- Compliance reporting (SOC 2, ISO 27001, GDPR, HIPAA-ready)
-- Endpoint protection and security automation
-- Platform workflow visualization (7 steps)
-- Security report with threat trends and risk categories
-- Security maturity checklist
+- Create invoice with line items and tax rules
+- Send secure payment requests with reminders
+- Track payment status (pending, completed, failed)
+- Reconcile transactions against invoices
+- Generate financial reports for stakeholders
 
-## Threat Dashboard Features
+## Analytics Features
 
-- Live-style SOC console header
-- Risk score, active threats, blocked attacks stats
-- Monitored assets and incident status
-- Recent security event cards with severity badges
-- Activity log timeline
-- Suspicious activity section
-- Alert severity indicators (critical, high, medium, low)
-- Status labels (active, investigating, mitigated, blocked)
+- Revenue trend visualization
+- Expenses overview by category
+- Payment success rate monitoring
+- Invoice aging analysis
+- Monthly cash flow tracking
+- Customer payment behavior metrics
 
-## Lead Generation Features
+## Security Features
 
-- Primary CTA: "Request Security Audit"
-- Secondary CTA: "View Platform"
-- Repeated CTA bands on every major page
-- Contact form with company size and project type fields
-- Security concern field for qualification
-- Success state feedback on form submission
+- Encrypted financial workflows
+- Role-based permissions
+- Secure payment operations (PCI-ready structure)
+- Audit-friendly activity logs
+- Privacy-focused product design
+- Compliance-ready architecture
 
 ## UI Features
 
-- Dark professional interface
-- Grid background pattern
-- Glass-style cards with cyan/green glow variants
-- Gradient security text accents
-- Lucide React icons throughout
-- Hover states on cards and navigation
-- Responsive grid layouts (1 → 2 → 3 → 4 columns)
-- Tabular monospace figures for security metrics
+- Finance dashboard mockup built with components
+- Payment workflow step visualization
+- Transaction cards with status indicators
+- Financial analytics chart UI (CSS-based)
+- Pricing cards with annual/monthly toggle
+- Demo request contact form
+- Security feature grid
+- Responsive mobile-first layout
+- Framer Motion section animations
 
 ## Developer Features
 
-- TypeScript data models in `data/`
-- Reusable `cn()` utility for class merging
-- Component separation: layout / sections / security / ui
-- Framer Motion with `prefers-reduced-motion` support
-- Tailwind CSS v4 with CSS custom properties
-- `.env.example` for site URL configuration
-- MIT LICENSE
-- Architecture documentation with Mermaid diagrams
+- Reusable component architecture
+- Static data files for content management
+- TypeScript types for all data models
+- `cn()` utility for className merging
+- `formatCurrency`, `formatPercent`, `formatNumber` helpers
+- Tailwind CSS design tokens in `globals.css`
+- Next.js App Router with per-page metadata

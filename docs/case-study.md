@@ -1,106 +1,95 @@
-# Case Study: ShieldOps Security
+# Case Study: FinEdge
 
 ## Context
 
-Cybersecurity companies sell complex, high-trust services to buyers who range from hands-on security engineers to executives who need clarity without jargon. A generic marketing site fails both audiences — too technical for leadership, too shallow for practitioners.
+Fintech companies need websites that communicate trust, clarity, security, and product value within seconds. Financial decision-makers — CFOs, founders, and operations leads — evaluate software based on how clearly it explains payments, reporting, and security before they ever request a demo.
 
-ShieldOps Security is a portfolio project that demonstrates how to bridge that gap: a premium B2B cybersecurity website with a threat dashboard mockup, measurable security metrics, compliance trust signals, case studies, and a consultation-focused conversion flow.
+FinEdge is a fictional fintech platform positioned to help modern businesses manage payments, invoices, spending, cash flow, analytics, and secure transactions from one interface.
 
 ## Problem
 
-Security service providers often struggle to:
+Many fintech landing pages fail to:
 
-- Explain SOC monitoring, threat detection, and incident response without overwhelming visitors
-- Build credibility with enterprise buyers who evaluate vendors on trust and compliance
-- Convert website traffic into qualified audit requests and sales conversations
-- Present technical depth while maintaining a professional, commercial appearance
+- Present financial product value in concrete terms
+- Build trust through security and compliance messaging
+- Show realistic dashboard and workflow UI
+- Guide visitors toward demo requests or signups
+- Maintain a premium, commercial-grade aesthetic
 
 ## Solution
 
-ShieldOps Security combines:
+FinEdge solves these challenges by presenting:
 
-- A **hero section** with clear positioning for cloud infrastructure teams
-- A **threat dashboard mockup** built from reusable UI components (not static images)
-- **Security metrics** that communicate outcomes (uptime, blocked threats, response speed)
-- **Eight solution cards** covering the full service portfolio
-- A **platform workflow** page explaining the end-to-end security pipeline
-- **Compliance badges** for SOC 2, ISO 27001, GDPR, and HIPAA-ready workflows
-- **Three case studies** across SaaS, fintech, and healthcare scenarios
-- A **security report page** with trends, risk categories, and recommendations
-- A **contact form** structured for B2B consultation requests
+- A finance dashboard mockup with real metric hierarchy
+- A five-step payment workflow from invoice to report
+- Analytics cards with chart-like UI blocks
+- Security messaging with compliance-ready language
+- Pricing tiers for different business stages
+- Repeated conversion CTAs across every page
 
 ## Business Goal
 
-Drive qualified leads by helping visitors understand ShieldOps capabilities, trust the company's expertise, and request a security audit or consultation.
+Help a fintech company explain its product clearly, build trust with financial decision-makers, present product value, highlight security, and convert visitors into demo requests or account signups.
 
 ## Target Audience
 
-- Cybersecurity companies evaluating website patterns for their own brand
-- B2B security teams and MSSPs
-- SaaS and fintech companies seeking SOC coverage
-- CTOs, CISOs, IT managers, and compliance teams
-- Cloud infrastructure teams responsible for security posture
+- Fintech startups and SaaS companies
+- Small and mid-sized businesses
+- Finance teams, founders, CFOs, and operations teams
+- Payment platforms and companies evaluating financial software
+- Clients needing premium fintech landing pages
 
 ## Main Features
 
-| Area | Implementation |
-|------|----------------|
-| Home | Hero, dashboard, metrics, solutions preview, workflow, compliance, case studies, testimonials, FAQ, CTA |
-| Solutions | Full grid of eight cybersecurity services |
-| Platform | Seven-step security operations workflow |
-| Case Studies | Three detailed fictional client stories |
-| Security Report | Threat trends, risk categories, recommendations, maturity checklist |
-| Contact | Multi-field consultation form with project type selection |
+- Payment management and invoice automation
+- Cash flow insights and expense tracking
+- Financial analytics with trend visualization
+- Secure transactions with role-based permissions
+- Team permissions and real-time reporting
+- Demo request form with fintech use case selection
 
 ## Design Decisions
 
-- **Premium dark cybersecurity aesthetic** — conveys seriousness and technical depth
-- **Green, cyan, and blue accents** — industry-standard security palette without cliché terminal aesthetics
-- **Threat dashboard UI** — demonstrates ability to build complex data interfaces
-- **Clear risk and metric hierarchy** — tabular numbers, severity badges, status indicators
-- **Compliance badges for trust** — addresses enterprise buyer objections early
-- **Case-study-focused layout** — proof over promises
-- **Repeated CTA sections** — audit request at nav, mid-page, and footer funnel
-- **Professional enterprise typography** — Inter + JetBrains Mono for data
-- **Mobile-first responsive structure** — collapsible nav, stacked dashboard on small screens
+- **Premium fintech SaaS aesthetic** — clean, professional, commercial-grade
+- **Blue, emerald, cyan, and subtle gold palette** — trust and financial authority
+- **Financial dashboard mockup** — built with HTML/CSS components, not static images
+- **Secure transaction UI details** — status badges, metric cards, activity patterns
+- **Clear metric hierarchy** — balance, revenue, cash flow, health score
+- **Trust-building security section** — dark contrast section for emphasis
+- **Readable typography** — Plus Jakarta Sans with tabular numbers for financial data
+- **Mobile-first responsive design** — hamburger nav, stacked cards, touch-friendly targets
 
 ## Technical Decisions
 
-- **Next.js App Router** — multi-page structure, metadata per route, static generation
-- **TypeScript** — typed data models for threats, solutions, case studies, and metrics
-- **Tailwind CSS v4** — fast iteration with CSS variable theme tokens
-- **Framer Motion** — subtle entrance animations without performance overhead
-- **Static data files** — content separated from presentation in `data/`
-- **Reusable components** — `security/` for domain components, `ui/` for primitives
+- **Next.js** for multi-page structure, App Router, and SEO metadata
+- **TypeScript** for type safety across data models and components
+- **Tailwind CSS** for fast, consistent styling with design tokens
+- **Framer Motion** for subtle hero, card, and section reveal animations
+- **Static data files** in `data/` for easy content management
+- **Reusable components** in `components/ui`, `components/fintech`, and `components/sections`
 
 ## Component Strategy
 
-```
-components/
-├── layout/     → Navbar, Footer (persistent chrome)
-├── sections/   → Page-level marketing sections
-├── security/   → ThreatCard, SolutionCard, ContactForm, etc.
-└── ui/         → Button, Card, Badge, form inputs
-```
+Components are organized by responsibility:
 
-Data lives in `data/*.ts` and is imported by sections and pages. This keeps copy updates isolated from component logic.
+- `layout/` — Navbar and Footer
+- `sections/` — page-level sections (Hero, FinanceDashboard, etc.)
+- `fintech/` — domain-specific cards and forms
+- `ui/` — shared primitives (Button, Card, Input, etc.)
+
+Content lives in `data/` files, keeping presentation and content separate.
 
 ## Result
 
-A complete, deployable cybersecurity marketing site that:
-
-- Builds successfully with `pnpm build`
-- Presents six routes with consistent branding and navigation
-- Demonstrates dashboard UI, trust content, and lead capture patterns
-- Serves as a portfolio piece for GitHub, LinkedIn, and client outreach
+A complete fintech landing website with five pages, dashboard mockups, payment workflow visualization, analytics UI, security messaging, pricing, testimonials, FAQ, and a demo request form. The project is suitable for GitHub portfolio presentation, LinkedIn showcase, and freelance client outreach.
 
 ## What I Would Add Next
 
-1. **Contact form backend** — Resend, Formspree, or custom API route
-2. **CRM integration** — push leads to HubSpot with project type tagging
-3. **CMS** — Sanity or Contentlayer for case studies and security reports
-4. **Blog** — security insights for SEO and thought leadership
-5. **Demo booking** — Calendly embed on contact and CTA sections
-6. **Analytics** — conversion tracking on audit request clicks
-7. **Downloadable audit checklist** — lead magnet PDF
-8. **Real platform dashboard** — authenticated demo environment
+- Real signup and authentication flow
+- Backend API for demo request submissions
+- Payment provider integration (Stripe, etc.)
+- Customer dashboard with live data
+- CRM integration for lead routing
+- Analytics tracking (GA4, Mixpanel)
+- Compliance documentation pages
+- Email notification system for demo requests

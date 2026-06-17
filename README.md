@@ -1,81 +1,74 @@
-# ShieldOps Security — Cybersecurity Website
+# FinEdge — Fintech Landing Website
 
-A premium cybersecurity company website built with Next.js, TypeScript, Tailwind CSS, and Framer Motion.
+A premium fintech landing website built with Next.js, TypeScript, Tailwind CSS, and Framer Motion.
 
 ## Live Demo
 
-**https://cybersecurity-website-umber.vercel.app/**
+**[https://fintech-landing-website-5jg8wso3o-valakasneckles-projects.vercel.app/](https://fintech-landing-website-5jg8wso3o-valakasneckles-projects.vercel.app/)**
 
 ## Screenshots
 
-Add screenshots to the `screenshots/` folder before publishing to GitHub:
+| Preview | Path |
+|---------|------|
+| Home (desktop) | `./screenshots/01-home-desktop.png` |
+| Home (mobile) | `./screenshots/02-home-mobile.png` |
+| Finance dashboard | `./screenshots/03-finance-dashboard.png` |
+| Payment workflow | `./screenshots/04-payment-workflow.png` |
+| Security section | `./screenshots/05-security-section.png` |
+| Pricing page | `./screenshots/06-pricing-page.png` |
+| Lighthouse report | `./screenshots/07-lighthouse.png` |
 
-| File | Description |
-|------|-------------|
-| [./screenshots/01-home-desktop.png](./screenshots/01-home-desktop.png) | Home page — desktop |
-| [./screenshots/02-home-mobile.png](./screenshots/02-home-mobile.png) | Home page — mobile |
-| [./screenshots/03-threat-dashboard.png](./screenshots/03-threat-dashboard.png) | Threat dashboard section |
-| [./screenshots/04-solutions-page.png](./screenshots/04-solutions-page.png) | Solutions page |
-| [./screenshots/05-security-report-page.png](./screenshots/05-security-report-page.png) | Security report page |
-| [./screenshots/06-contact-page.png](./screenshots/06-contact-page.png) | Contact page |
-| [./screenshots/07-lighthouse.png](./screenshots/07-lighthouse.png) | Lighthouse performance audit |
+> Screenshot files are placeholders until you capture real previews from the live demo.
 
 ## Project Overview
 
-ShieldOps Security is a fictional cybersecurity company website showcasing SOC monitoring, threat detection, vulnerability scanning, incident response, cloud security, and compliance reporting services.
-
-The site presents complex security offerings in a format that resonates with both technical and business stakeholders — combining a live-style threat dashboard, security metrics, compliance badges, case studies, and consultation-focused CTAs.
+**FinEdge** is a fictional fintech landing website for payment management, invoice automation, cash flow insights, expense tracking, secure transactions, and financial analytics. The site presents a commercial-grade product experience designed for finance teams, founders, and operations leaders evaluating financial software.
 
 ## Business Goal
 
-The website helps a cybersecurity company:
-
-- Present technical services clearly to CTOs, CISOs, and IT managers
-- Build trust with enterprise and SaaS buyers through compliance and case study content
-- Convert visitors into security audit requests and consultation leads
-- Demonstrate security expertise without overwhelming non-technical readers
+The website helps a fintech company communicate financial product value clearly, build trust with decision-makers, present security capabilities, and convert visitors into demo requests or account signups.
 
 ## Key Features
 
-- Premium dark cybersecurity aesthetic with green, cyan, and blue accents
-- Interactive threat dashboard mockup (HTML/CSS components)
-- Security metrics section with outcome-focused KPIs
-- Solutions page covering eight core service areas
-- Platform workflow page explaining the security operations pipeline
-- Case studies page with three industry scenarios
-- Security report page with trends, risk categories, and recommendations
-- Contact page with consultation request form
-- Compliance and trust badges (SOC 2, ISO 27001, GDPR, HIPAA-ready)
+- Premium fintech landing page with dark/light section contrast
+- Finance dashboard mockup with metrics and transactions
+- Payment workflow section with five-step lifecycle
+- Financial analytics section with CSS chart UI
+- Security and trust section with compliance-ready messaging
+- Pricing page with Starter, Growth, and Business plans
+- Contact page with demo request form
 - Responsive desktop and mobile layout
 - Reusable component architecture
-- Conversion-focused CTA sections throughout
-- Subtle Framer Motion animations
+- Conversion-focused CTA sections
+- Clean Tailwind CSS styling with Framer Motion animations
 
 ## Tech Stack
 
-- **Next.js** — App Router, static generation, SEO metadata
-- **TypeScript** — Type-safe components and data models
-- **Tailwind CSS** — Utility-first styling with custom security theme
-- **Framer Motion** — Subtle section reveals and hover interactions
-- **Lucide React** — Consistent icon system
-- **Vercel** — Production deployment
+| Layer | Technology |
+|-------|------------|
+| Framework | Next.js (App Router) |
+| Language | TypeScript |
+| Styling | Tailwind CSS |
+| Animation | Framer Motion |
+| Icons | Lucide React |
+| Deployment | Vercel |
 
 ## Architecture
 
-- [architecture/system-overview.md](./architecture/system-overview.md)
-- [architecture/component-structure.md](./architecture/component-structure.md)
-- [architecture/user-flow.md](./architecture/user-flow.md)
-- [architecture/deployment.md](./architecture/deployment.md)
+- [System Overview](./architecture/system-overview.md)
+- [Component Structure](./architecture/component-structure.md)
+- [User Flow](./architecture/user-flow.md)
+- [Deployment](./architecture/deployment.md)
 
 ## What This Project Demonstrates
 
-- B2B cybersecurity website development
-- Complex service presentation for technical and business buyers
-- Trust-focused UX design with compliance and social proof
-- Security dashboard UI built with reusable components
-- Responsive UI implementation (mobile-first)
-- Reusable component architecture (`layout/`, `sections/`, `security/`, `ui/`)
-- Product-focused design thinking for lead generation
+- Fintech landing page development
+- Financial dashboard UI design
+- Trust-focused UX design
+- Responsive UI implementation
+- Reusable component architecture
+- Product-focused design thinking
+- Conversion-oriented page structure
 - Frontend architecture suitable for real client projects
 
 ## Getting Started
@@ -85,33 +78,30 @@ pnpm install
 pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000).
-
-Copy `.env.example` to `.env.local` and adjust `NEXT_PUBLIC_SITE_URL` if needed.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## Build
 
 ```bash
 pnpm build
-pnpm start
 ```
 
 ## Future Improvements
 
-- Add real contact form backend
-- Add CRM integration (HubSpot, Salesforce)
-- Add CMS for security reports and blog content
-- Add blog / security insights section
-- Add demo booking integration (Calendly)
-- Add analytics tracking (Plausible, GA4)
-- Add downloadable security audit checklist
-- Add multilingual pages (i18n)
-- Add advanced SEO landing pages per service
-- Add real security platform dashboard with live data
+- Add real signup flow
+- Add backend API
+- Add authentication
+- Add payments integration
+- Add invoice management backend
+- Add customer dashboard
+- Add analytics tracking
+- Add CRM integration
+- Add billing integration
+- Add compliance documentation pages
 
 ## Case Study
 
-Full project case study: [docs/case-study.md](./docs/case-study.md)
+Read the full case study: [docs/case-study.md](./docs/case-study.md)
 
 ## License
 

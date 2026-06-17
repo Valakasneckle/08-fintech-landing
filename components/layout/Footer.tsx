@@ -1,42 +1,44 @@
 import Link from "next/link";
-import { Shield } from "lucide-react";
+import { navLinks, siteConfig } from "@/data/faqs";
 
 const footerLinks = {
-  Solutions: [
-    { href: "/solutions", label: "All Solutions" },
-    { href: "/platform", label: "Platform" },
-    { href: "/security-report", label: "Security Report" },
-  ],
+  Product: navLinks,
   Company: [
-    { href: "/case-studies", label: "Case Studies" },
     { href: "/contact", label: "Contact" },
+    { href: "/security", label: "Security" },
+  ],
+  Legal: [
+    { href: "#", label: "Privacy Policy" },
+    { href: "#", label: "Terms of Service" },
+    { href: "#", label: "Cookie Policy" },
   ],
 };
 
 export function Footer() {
   return (
-    <footer className="border-t border-card-border bg-card">
-      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+    <footer className="border-t border-border bg-white px-4 py-12 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div>
-            <Link href="/" className="flex items-center gap-2 font-bold text-foreground cursor-pointer">
-              <Shield className="h-5 w-5 text-accent-cyan" aria-hidden="true" />
-              ShieldOps Security
+            <Link href="/" className="flex items-center gap-2 font-bold text-primary">
+              <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-accent-blue via-accent-cyan to-accent-emerald text-sm text-white">
+                F
+              </span>
+              {siteConfig.name}
             </Link>
-            <p className="mt-4 text-sm leading-relaxed text-muted">
-              Enterprise-grade SOC monitoring, threat detection, and incident
-              response for modern cloud infrastructure.
+            <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+              {siteConfig.tagline}
             </p>
           </div>
           {Object.entries(footerLinks).map(([title, links]) => (
             <div key={title}>
-              <h3 className="text-sm font-semibold text-foreground">{title}</h3>
-              <ul className="mt-4 space-y-2">
+              <h3 className="text-sm font-semibold text-primary">{title}</h3>
+              <ul className="mt-4 space-y-3">
                 {links.map((link) => (
-                  <li key={link.href}>
+                  <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="text-sm text-muted transition-colors hover:text-accent-cyan cursor-pointer"
+                      className="text-sm text-muted-foreground transition-colors hover:text-primary"
                     >
                       {link.label}
                     </Link>
@@ -45,22 +47,11 @@ export function Footer() {
               </ul>
             </div>
           ))}
-          <div>
-            <h3 className="text-sm font-semibold text-foreground">Compliance</h3>
-            <ul className="mt-4 space-y-2 text-sm text-muted">
-              <li>SOC 2</li>
-              <li>ISO 27001</li>
-              <li>GDPR</li>
-              <li>HIPAA-ready</li>
-            </ul>
-          </div>
         </div>
-        <div className="mt-12 border-t border-card-border pt-8 text-center text-sm text-muted">
-          <p>
-            &copy; {new Date().getFullYear()} ShieldOps Security. Portfolio
-            demonstration project.
-          </p>
-        </div>
+        <p className="mt-10 border-t border-border pt-8 text-center text-sm text-muted-foreground">
+          © {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
+          Illustrative portfolio project — not a real financial product.
+        </p>
       </div>
     </footer>
   );

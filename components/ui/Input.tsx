@@ -6,32 +6,21 @@ type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
 };
 
 export function Input({ label, error, className, id, ...props }: InputProps) {
-  const inputId = id ?? props.name;
-
+  const inputId = id ?? label.toLowerCase().replace(/\s+/g, "-");
   return (
-    <div>
-      <label htmlFor={inputId} className="block text-sm font-medium text-foreground">
+    <div className="space-y-2">
+      <label htmlFor={inputId} className="block text-sm font-medium text-primary">
         {label}
-        {props.required && (
-          <span className="text-accent-red ml-1" aria-hidden="true">
-            *
-          </span>
-        )}
       </label>
       <input
         id={inputId}
         className={cn(
-          "mt-2 block w-full rounded-lg border border-card-border bg-background px-4 py-3 text-sm text-foreground transition-colors placeholder:text-muted focus:border-accent-cyan min-h-[44px]",
-          error && "border-accent-red",
+          "w-full rounded-xl border border-border bg-white px-4 py-3 text-sm text-primary placeholder:text-muted-foreground focus:border-accent-blue focus:outline-none focus:ring-2 focus:ring-accent-blue/20",
           className
         )}
         {...props}
       />
-      {error && (
-        <p className="mt-1 text-xs text-accent-red" role="alert">
-          {error}
-        </p>
-      )}
+      {error && <p className="text-sm text-red-600">{error}</p>}
     </div>
   );
 }

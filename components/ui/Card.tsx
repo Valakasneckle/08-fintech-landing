@@ -3,16 +3,17 @@ import { cn } from "@/lib/utils";
 type CardProps = {
   children: React.ReactNode;
   className?: string;
-  glow?: "cyan" | "green" | "none";
+  dark?: boolean;
 };
 
-export function Card({ children, className, glow = "none" }: CardProps) {
+export function Card({ children, className, dark }: CardProps) {
   return (
     <div
       className={cn(
-        "rounded-xl border border-card-border bg-card p-6",
-        glow === "cyan" && "glow-cyan",
-        glow === "green" && "glow-green",
+        "rounded-2xl border p-6",
+        dark
+          ? "border-white/10 bg-surface-dark-elevated text-slate-100"
+          : "border-border bg-white shadow-sm",
         className
       )}
     >

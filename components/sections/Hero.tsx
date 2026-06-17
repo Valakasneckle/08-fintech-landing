@@ -1,44 +1,59 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Shield } from "lucide-react";
+import { ArrowRight, Play } from "lucide-react";
+import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
+import { FinanceMetricCard } from "@/components/fintech/FinanceMetricCard";
+import { dashboardMetrics } from "@/data/metrics";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden grid-bg px-4 pb-20 pt-16 sm:px-6 lg:px-8 lg:pt-24">
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-accent-cyan/5 via-transparent to-transparent" />
+    <section className="mesh-bg relative px-4 pb-16 pt-12 sm:px-6 sm:pt-16 lg:px-8 lg:pb-24">
       <div className="relative z-10 mx-auto max-w-7xl">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, ease: "easeOut" }}
-          className="max-w-3xl"
-        >
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-accent-cyan/20 bg-accent-cyan/5 px-4 py-1.5 font-mono text-xs text-accent-cyan">
-            <Shield className="h-3.5 w-3.5" aria-hidden="true" />
-            SOC · Threat Detection · Cloud Security
-          </div>
-          <h1 className="text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-            Real-time threat detection for{" "}
-            <span className="text-gradient-security">modern cloud infrastructure</span>
-          </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted">
-            ShieldOps Security helps security teams monitor threats, detect
-            vulnerabilities, respond to incidents, and protect cloud systems
-            with enterprise-grade security workflows — without the complexity of
-            building an in-house SOC.
-          </p>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <Button href="/contact" size="lg">
-              Request Security Audit
-              <ArrowRight className="h-4 w-4" aria-hidden="true" />
-            </Button>
-            <Button href="/platform" variant="secondary" size="lg">
-              View Platform
-            </Button>
-          </div>
-        </motion.div>
+        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <Badge variant="success" className="mb-4">
+              Built for finance teams & growing businesses
+            </Badge>
+            <h1 className="text-4xl font-bold leading-tight tracking-tight text-primary sm:text-5xl lg:text-[3.25rem] lg:leading-[1.1]">
+              Modern financial operations for{" "}
+              <span className="text-gradient">growing businesses</span>
+            </h1>
+            <p className="mt-6 max-w-lg text-lg leading-relaxed text-muted-foreground">
+              FinEdge helps teams manage payments, invoices, spending, cash flow,
+              analytics, and secure transactions from one modern fintech platform.
+            </p>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+              <Button href="/contact" size="lg">
+                Start Free Trial
+                <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </Button>
+              <Button href="/features" variant="secondary" size="lg">
+                <Play className="h-4 w-4" aria-hidden="true" />
+                View Demo
+              </Button>
+            </div>
+            <p className="mt-6 text-sm text-muted-foreground">
+              No credit card required. 14-day trial on Growth plans.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.15 }}
+            className="grid grid-cols-2 gap-3 sm:gap-4"
+          >
+            {dashboardMetrics.slice(0, 4).map((metric) => (
+              <FinanceMetricCard key={metric.label} {...metric} />
+            ))}
+          </motion.div>
+        </div>
       </div>
     </section>
   );

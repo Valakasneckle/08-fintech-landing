@@ -1,34 +1,30 @@
 export type Testimonial = {
-  id: string;
   quote: string;
-  name: string;
+  author: string;
   role: string;
   company: string;
 };
 
 export const testimonials: Testimonial[] = [
   {
-    id: "t-1",
     quote:
-      "ShieldOps gave us enterprise-grade SOC coverage without building a 15-person security team. Their dashboard made complex alerts understandable for our leadership.",
-    name: "Sarah Chen",
-    role: "CTO",
-    company: "NexusFlow SaaS",
+      "FinEdge replaced three separate tools for invoicing, payments, and reporting. Our finance team finally has one source of truth.",
+    author: "Sarah Chen",
+    role: "CFO",
+    company: "Northline Payments",
   },
   {
-    id: "t-2",
     quote:
-      "The incident response playbooks cut our mean time to contain from hours to minutes. We finally have confidence in our cloud security posture.",
-    name: "Marcus Webb",
-    role: "CISO",
-    company: "PayBridge Financial",
+      "The payment workflow is intuitive. We cut invoice follow-up time in half and improved our on-time collection rate significantly.",
+    author: "Marcus Webb",
+    role: "Head of Operations",
+    company: "ScaleForge SaaS",
   },
   {
-    id: "t-3",
     quote:
-      "Compliance reporting used to take our team two weeks per quarter. ShieldOps automated most of the evidence collection and gave auditors exactly what they needed.",
-    name: "Elena Rodriguez",
-    role: "Director of IT Security",
-    company: "HealthSync Platform",
+      "Security and permissions were non-negotiable for us. FinEdge gave our auditors clear activity logs without slowing down the team.",
+    author: "Elena Rodriguez",
+    role: "VP Finance",
+    company: "Meridian Logistics",
   },
 ];

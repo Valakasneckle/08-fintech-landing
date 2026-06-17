@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { Plus_Jakarta_Sans, JetBrains_Mono } from "next/font/google";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { siteConfig } from "@/data/faqs";
 import "./globals.css";
 
-const inter = Inter({
-  variable: "--font-inter",
+const jakarta = Plus_Jakarta_Sans({
+  variable: "--font-jakarta",
   subsets: ["latin"],
   display: "swap",
 });
@@ -16,37 +17,42 @@ const jetbrains = JetBrains_Mono({
   display: "swap",
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://cybersecurity-website-umber.vercel.app";
-
 export const metadata: Metadata = {
-  title: {
-    default: "ShieldOps Security — Cybersecurity for Modern Cloud Infrastructure",
-    template: "%s | ShieldOps Security",
-  },
-  description:
-    "Enterprise-grade SOC monitoring, threat detection, vulnerability management, and incident response for cloud infrastructure teams.",
-  metadataBase: new URL(siteUrl),
+  title: `${siteConfig.name} — Fintech Landing Website`,
+  description: siteConfig.tagline,
+  metadataBase: new URL(siteConfig.url),
   openGraph: {
-    title: "ShieldOps Security",
-    description:
-      "Real-time threat detection and SOC monitoring for modern cloud infrastructure.",
-    url: siteUrl,
-    siteName: "ShieldOps Security",
+    title: siteConfig.name,
+    description: siteConfig.tagline,
+    url: siteConfig.url,
+    siteName: siteConfig.name,
     type: "website",
   },
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: siteConfig.name,
+  url: siteConfig.url,
+  description: siteConfig.tagline,
+};
+
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${jetbrains.variable} h-full`}>
-      <body className="min-h-full flex flex-col bg-background text-foreground antialiased">
+    <html lang="en" className={`${jakarta.variable} ${jetbrains.variable} h-full scroll-smooth`}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
+      <body className="min-h-full flex flex-col bg-background text-foreground font-sans antialiased">
         <a
           href="#main"
-          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-accent-cyan focus:px-4 focus:py-2 focus:text-background"
+          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-primary focus:px-4 focus:py-2 focus:text-white"
         >
           Skip to main content
         </a>

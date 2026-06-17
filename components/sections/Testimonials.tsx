@@ -1,38 +1,38 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { testimonials } from "@/data/testimonials";
-import { Card } from "@/components/ui/Card";
+import { Quote } from "lucide-react";
 import { Section, SectionHeader } from "@/components/ui/Section";
+import { testimonials } from "@/data/testimonials";
 
 export function Testimonials() {
   return (
-    <Section grid>
+    <Section id="testimonials" dark>
       <SectionHeader
-        eyebrow="Testimonials"
-        title="Trusted by security leaders"
-        description="What CTOs, CISOs, and IT directors say about working with ShieldOps."
-        className="mb-12"
+        badge="Testimonials"
+        title="Trusted by finance teams"
+        description="See how growing businesses use FinEdge to streamline payments, reporting, and financial operations."
+        dark
       />
       <div className="grid gap-6 lg:grid-cols-3">
-        {testimonials.map((t, i) => (
-          <motion.div
-            key={t.id}
+        {testimonials.map((item, i) => (
+          <motion.blockquote
+            key={item.author}
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: i * 0.08, duration: 0.35 }}
+            transition={{ duration: 0.4, delay: i * 0.1 }}
+            className="rounded-2xl border border-white/10 bg-white/5 p-6"
           >
-            <Card className="h-full">
-              <p className="text-sm leading-relaxed text-muted">&ldquo;{t.quote}&rdquo;</p>
-              <div className="mt-6 border-t border-card-border pt-4">
-                <p className="font-semibold text-foreground">{t.name}</p>
-                <p className="text-xs text-muted">
-                  {t.role}, {t.company}
-                </p>
-              </div>
-            </Card>
-          </motion.div>
+            <Quote className="h-8 w-8 text-accent-cyan/50" aria-hidden="true" />
+            <p className="mt-4 text-sm leading-relaxed text-slate-300">&ldquo;{item.quote}&rdquo;</p>
+            <footer className="mt-6 border-t border-white/10 pt-4">
+              <p className="font-semibold text-white">{item.author}</p>
+              <p className="text-sm text-slate-400">
+                {item.role}, {item.company}
+              </p>
+            </footer>
+          </motion.blockquote>
         ))}
       </div>
     </Section>

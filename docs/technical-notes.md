@@ -2,93 +2,93 @@
 
 ## Frontend Architecture
 
-ShieldOps Security uses the Next.js App Router with a component-driven architecture. Pages compose marketing sections; sections consume typed data from `data/` and render security-specific components.
-
-```
-app/                    → Routes and page-level metadata
-components/layout/      → Navbar, Footer
-components/sections/    → Hero, ThreatDashboard, CTA, etc.
-components/security/    → ThreatCard, SolutionCard, ContactForm
-components/ui/          → Button, Card, Badge, form inputs
-data/                   → Static content (threats, solutions, FAQs)
-lib/utils.ts            → cn() className helper
-```
+FinEdge uses Next.js App Router with a component-driven architecture. Pages compose section components, which in turn use fintech-specific and shared UI components. Content is stored in static TypeScript data files.
 
 ## App Routing
 
-| Route | File | Purpose |
-|-------|------|---------|
-| `/` | `app/page.tsx` | Home — all landing sections |
-| `/solutions` | `app/solutions/page.tsx` | Service catalog |
-| `/platform` | `app/platform/page.tsx` | Security workflow + dashboard |
-| `/case-studies` | `app/case-studies/page.tsx` | Client success stories |
-| `/security-report` | `app/security-report/page.tsx` | Sample executive report |
-| `/contact` | `app/contact/page.tsx` | Consultation form |
-
-Each route exports `metadata` for title and description.
+| Route | Page |
+|-------|------|
+| `/` | Home — all landing sections |
+| `/features` | Product features deep-dive |
+| `/pricing` | Pricing plans and FAQ |
+| `/security` | Security and trust |
+| `/contact` | Demo request form |
 
 ## Data Structure
 
-Content is centralized in typed TypeScript files:
-
 ```
 data/
-├── threats.ts          → Dashboard summary, threat cards, events
-├── metrics.ts          → Security KPI cards
-├── solutions.ts        → Eight service offerings
-├── platform.ts         → Seven workflow steps
-├── compliance.ts       → Six compliance/trust items
-├── case-studies.ts     → Three case studies
-├── testimonials.ts     → Three B2B testimonials
-├── faqs.ts             → Six FAQ items
-└── security-report.ts  → Trends, risks, recommendations, maturity
+├── features.ts      # Product features with Lucide icons
+├── metrics.ts       # Dashboard metrics and analytics cards
+├── transactions.ts  # Transaction mock data
+├── workflow.ts      # Payment workflow steps
+├── security.ts      # Security/trust features
+├── pricing.ts       # Pricing plans
+├── testimonials.ts  # B2B testimonials
+└── faqs.ts          # FAQ + site config + nav links
 ```
 
-Import data in sections or pages — no API layer required for this portfolio build.
+## Fintech UI Components
 
-## Security UI Components
-
-| Component | Used In | Purpose |
-|-----------|---------|---------|
-| `ThreatCard` | ThreatDashboard | Alert row with severity and status |
-| `SecurityMetricCard` | SecurityMetrics | KPI with icon and trend |
-| `SolutionCard` | Solutions | Service with benefits list |
-| `ComplianceBadge` | Compliance | Framework trust badge |
-| `CaseStudyCard` | CaseStudies | Full case study layout |
-| `SecurityReportCard` | SecurityReport | Prioritized recommendation |
-| `ContactForm` | Contact | Consultation request form |
+```
+components/
+├── layout/
+│   ├── Navbar.tsx
+│   └── Footer.tsx
+├── sections/
+│   ├── Hero.tsx
+│   ├── FinanceDashboard.tsx
+│   ├── PaymentWorkflow.tsx
+│   ├── Features.tsx
+│   ├── Analytics.tsx
+│   ├── Security.tsx
+│   ├── Pricing.tsx
+│   ├── Testimonials.tsx
+│   ├── FAQ.tsx
+│   └── CTA.tsx
+├── fintech/
+│   ├── FinanceMetricCard.tsx
+│   ├── TransactionCard.tsx
+│   ├── PaymentStep.tsx
+│   ├── FeatureCard.tsx
+│   ├── SecurityFeature.tsx
+│   ├── PricingCard.tsx
+│   └── ContactForm.tsx
+└── ui/
+    ├── Button.tsx
+    ├── Card.tsx
+    ├── Badge.tsx
+    ├── Section.tsx
+    ├── Input.tsx
+    ├── Textarea.tsx
+    └── Select.tsx
+```
 
 ## Styling
 
-- **Tailwind CSS v4** with `@theme inline` in `app/globals.css`
-- CSS variables for background, accents, and borders
-- Custom utilities: `.grid-bg`, `.glow-cyan`, `.text-gradient-security`
-- `tailwind.config.ts` for extended color tokens
-- Dark theme only (professional cybersecurity standard)
+- Tailwind CSS v4 with `@theme inline` tokens in `app/globals.css`
+- Design tokens: blue, cyan, emerald, gold accents
+- Dark sections use `.section-dark` utility
+- Light sections use `.section-light` utility
+- Glass effects for navbar
+- Mesh gradient backgrounds for hero
 
 ## Animations
 
-Framer Motion used sparingly:
+Framer Motion is used for:
 
-- Hero fade-in on load
-- Section `whileInView` reveals with staggered delays
-- Threat dashboard container entrance
-- No infinite decorative animations (SOC live indicator uses subtle ping only)
-
-`prefers-reduced-motion` disables transitions in `globals.css`.
+- Hero entrance animation
+- Section reveal on scroll (`whileInView`)
+- Staggered card animations
+- Reduced motion respected via CSS media query
 
 ## Responsiveness
 
-- Mobile-first breakpoints via Tailwind (`sm:`, `md:`, `lg:`)
-- Collapsible mobile navigation
-- Dashboard grid stacks on mobile (stats 2-col, threats full-width)
-- Touch targets ≥ 44px on buttons and nav items
-- Horizontal scroll only on threat trend chart (intentional, with `min-w`)
+- Mobile-first breakpoints (sm, lg)
+- Hamburger navigation on mobile
+- Grid layouts adapt from 1 to 2 to 3/4 columns
+- Touch-friendly 44px minimum tap targets
 
 ## Deployment
 
-See [architecture/deployment.md](../architecture/deployment.md).
-
-Production URL: **https://cybersecurity-website-umber.vercel.app/**
-
-Configure `NEXT_PUBLIC_SITE_URL` in `.env.local` or Vercel environment variables.
+Deployed on Vercel with default Next.js settings. See [architecture/deployment.md](../architecture/deployment.md).

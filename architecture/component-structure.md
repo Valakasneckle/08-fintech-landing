@@ -1,49 +1,43 @@
 # Component Structure
 
-## Component Diagram
-
 ```mermaid
-flowchart TB
-  AppLayout[App Layout] --> Navbar[Navbar]
-  AppLayout --> PageContent[Page Content]
-  AppLayout --> Footer[Footer]
+flowchart TD
+    AL[App Layout] --> Nav[Navbar]
+    AL --> PC[Page Content]
+    AL --> Foot[Footer]
 
-  PageContent --> Hero[Hero]
-  PageContent --> ThreatDashboard[ThreatDashboard]
-  PageContent --> SecurityMetrics[SecurityMetrics]
-  PageContent --> Solutions[Solutions]
-  PageContent --> PlatformWorkflow[PlatformWorkflow]
-  PageContent --> Compliance[Compliance]
-  PageContent --> CaseStudies[CaseStudies]
-  PageContent --> Testimonials[Testimonials]
-  PageContent --> FAQ[FAQ]
-  PageContent --> CTA[CTA]
+    PC --> Hero
+    PC --> FD[FinanceDashboard]
+    PC --> PW[PaymentWorkflow]
+    PC --> Feat[Features]
+    PC --> An[Analytics]
+    PC --> Sec[Security]
+    PC --> Pr[Pricing]
+    PC --> Test[Testimonials]
+    PC --> FAQ
+    PC --> CTA
 
-  ThreatDashboard --> ThreatCard[ThreatCard]
-  SecurityMetrics --> SecurityMetricCard[SecurityMetricCard]
-  Solutions --> SolutionCard[SolutionCard]
-  Compliance --> ComplianceBadge[ComplianceBadge]
-  CaseStudies --> CaseStudyCard[CaseStudyCard]
-  SecurityReportPage[Security Report Page] --> SecurityReportCard[SecurityReportCard]
-  ContactPage[Contact Page] --> ContactForm[ContactForm]
+    FD --> FMC[FinanceMetricCard]
+    FD --> TC[TransactionCard]
+    PW --> PS[PaymentStep]
+    Feat --> FC[FeatureCard]
+    Sec --> SF[SecurityFeature]
+    Pr --> PCard[PricingCard]
+    CP[Contact Page] --> CF[ContactForm]
 
-  SharedUI[Shared UI] --> Button[Button]
-  SharedUI --> Card[Card]
-  SharedUI --> Badge[Badge]
-  SharedUI --> Section[Section]
-  SharedUI --> Input[Input]
-  SharedUI --> Textarea[Textarea]
-  SharedUI --> Select[Select]
+    UI[Shared UI] --> Btn[Button]
+    UI --> Card
+    UI --> Badge
+    UI --> Section
+    UI --> Input
+    UI --> Textarea
+    UI --> Select
 ```
 
 ## Explanation
 
-The application follows a three-tier component hierarchy:
+The application uses a layered component hierarchy. The root layout wraps every page with Navbar and Footer. Page content is composed of section components, each responsible for a distinct part of the landing experience.
 
-1. **Layout** (`Navbar`, `Footer`) — persistent chrome on every page
-2. **Sections** — composable marketing blocks used on the home page and reused across routes
-3. **Security components** — domain-specific cards and forms that sections and pages import
+Fintech-specific components (FinanceMetricCard, TransactionCard, PaymentStep, etc.) handle domain UI patterns. Shared UI primitives (Button, Card, Input, etc.) provide consistent styling and behavior across the entire site.
 
-Shared UI primitives (`Button`, `Card`, `Badge`, form inputs) provide consistent styling and behavior. Data flows from `data/*.ts` into security components and sections — components do not fetch from APIs.
-
-Pages in `app/` are thin orchestrators that import and arrange sections.
+Content is injected from `data/` files, keeping components presentation-focused and data files content-focused.

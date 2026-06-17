@@ -10,21 +10,21 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        card: "var(--card)",
-        "card-border": "var(--card-border)",
+        primary: "var(--primary)",
         muted: "var(--muted)",
-        "accent-cyan": "var(--accent-cyan)",
-        "accent-green": "var(--accent-green)",
+        "muted-foreground": "var(--muted-foreground)",
+        border: "var(--border)",
         "accent-blue": "var(--accent-blue)",
-        "accent-red": "var(--accent-red)",
+        "accent-cyan": "var(--accent-cyan)",
+        "accent-emerald": "var(--accent-emerald)",
+        "accent-gold": "var(--accent-gold)",
       },
       fontFamily: {
-        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
+        sans: ["var(--font-jakarta)", "system-ui", "sans-serif"],
         mono: ["var(--font-jetbrains)", "monospace"],
       },
     },
   },
-  plugins: [],
 };
 
 export default config;

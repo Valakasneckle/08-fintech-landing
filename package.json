@@ -1,6 +1,6 @@
 {
-  "name": "07-cybersecurity-website",
-  "version": "1.0.0",
+  "name": "08-fintech-landing",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
