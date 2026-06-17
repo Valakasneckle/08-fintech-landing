@@ -1,11 +1,11 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
 import { SecurityFeature } from "@/components/fintech/SecurityFeature";
 import { Button } from "@/components/ui/Button";
 import { Section, SectionHeader } from "@/components/ui/Section";
 import { securityFeatures } from "@/data/security";
+import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 
 export function Security() {
   return (

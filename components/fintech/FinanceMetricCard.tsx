@@ -1,5 +1,5 @@
-import { TrendingDown, TrendingUp, Minus } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { Minus, TrendingDown, TrendingUp } from "lucide-react";
 
 type FinanceMetricCardProps = {
   label: string;

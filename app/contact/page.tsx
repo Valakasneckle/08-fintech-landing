@@ -1,8 +1,8 @@
-import type { Metadata } from "next";
 import { ContactForm } from "@/components/fintech/ContactForm";
 import { Section, SectionHeader } from "@/components/ui/Section";
 import { siteConfig } from "@/data/faqs";
 import { Mail, MapPin, Phone } from "lucide-react";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: `Contact | ${siteConfig.name}`,

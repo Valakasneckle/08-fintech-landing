@@ -1,8 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { Section, SectionHeader } from "@/components/ui/Section";
 import { analyticsCards } from "@/data/metrics";
+import { motion } from "framer-motion";
 
 export function Analytics() {
   return (

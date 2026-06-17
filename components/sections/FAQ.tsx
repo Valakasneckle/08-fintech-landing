@@ -1,10 +1,10 @@
 "use client";
 
-import { useState } from "react";
-import { ChevronDown } from "lucide-react";
 import { Section, SectionHeader } from "@/components/ui/Section";
 import { faqs } from "@/data/faqs";
 import { cn } from "@/lib/utils";
+import { ChevronDown } from "lucide-react";
+import { useState } from "react";
 
 export function FAQ() {
   const [openIndex, setOpenIndex] = useState(0);

@@ -1,9 +1,9 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { PaymentStep } from "@/components/fintech/PaymentStep";
 import { Section, SectionHeader } from "@/components/ui/Section";
 import { workflowSteps } from "@/data/workflow";
+import { motion } from "framer-motion";
 
 export function PaymentWorkflow() {
   return (

@@ -1,9 +1,9 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { FeatureCard } from "@/components/fintech/FeatureCard";
 import { Section, SectionHeader } from "@/components/ui/Section";
 import { features } from "@/data/features";
+import { motion } from "framer-motion";
 
 export function Features() {
   return (

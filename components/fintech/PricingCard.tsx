@@ -1,7 +1,7 @@
-import { Check } from "lucide-react";
 import { Button } from "@/components/ui/Button";
-import { cn } from "@/lib/utils";
 import type { PricingPlan } from "@/data/pricing";
+import { cn } from "@/lib/utils";
+import { Check } from "lucide-react";
 
 type PricingCardProps = {
   plan: PricingPlan;

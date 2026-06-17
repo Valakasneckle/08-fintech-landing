@@ -1,7 +1,7 @@
-import { CheckCircle2, Clock, XCircle } from "lucide-react";
+import type { Transaction } from "@/data/transactions";
 import { formatCurrency } from "@/lib/format";
 import { cn } from "@/lib/utils";
-import type { Transaction } from "@/data/transactions";
+import { CheckCircle2, Clock, XCircle } from "lucide-react";
 
 const statusConfig = {
   completed: { icon: CheckCircle2, label: "Completed", className: "text-accent-emerald" },

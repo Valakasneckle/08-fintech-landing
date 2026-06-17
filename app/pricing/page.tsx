@@ -1,9 +1,9 @@
-import type { Metadata } from "next";
-import { Pricing } from "@/components/sections/Pricing";
-import { FAQ } from "@/components/sections/FAQ";
 import { CTA } from "@/components/sections/CTA";
+import { FAQ } from "@/components/sections/FAQ";
+import { Pricing } from "@/components/sections/Pricing";
 import { Section, SectionHeader } from "@/components/ui/Section";
 import { siteConfig } from "@/data/faqs";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: `Pricing | ${siteConfig.name}`,

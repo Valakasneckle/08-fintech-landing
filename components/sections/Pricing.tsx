@@ -1,10 +1,10 @@
 "use client";
 
-import { useState } from "react";
-import { motion } from "framer-motion";
 import { PricingCard } from "@/components/fintech/PricingCard";
 import { Section, SectionHeader } from "@/components/ui/Section";
 import { pricingPlans } from "@/data/pricing";
+import { motion } from "framer-motion";
+import { useState } from "react";
 
 export function Pricing() {
   const [annual, setAnnual] = useState(false);

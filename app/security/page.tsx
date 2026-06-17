@@ -1,8 +1,8 @@
-import type { Metadata } from "next";
-import { Security } from "@/components/sections/Security";
 import { CTA } from "@/components/sections/CTA";
+import { Security } from "@/components/sections/Security";
 import { Section, SectionHeader } from "@/components/ui/Section";
 import { siteConfig } from "@/data/faqs";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: `Security | ${siteConfig.name}`,

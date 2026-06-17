@@ -1,10 +1,10 @@
-import type { Metadata } from "next";
-import { Features } from "@/components/sections/Features";
-import { PaymentWorkflow } from "@/components/sections/PaymentWorkflow";
 import { Analytics } from "@/components/sections/Analytics";
 import { CTA } from "@/components/sections/CTA";
+import { Features } from "@/components/sections/Features";
+import { PaymentWorkflow } from "@/components/sections/PaymentWorkflow";
 import { Section, SectionHeader } from "@/components/ui/Section";
 import { siteConfig } from "@/data/faqs";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: `Features | ${siteConfig.name}`,

@@ -1,9 +1,9 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { Quote } from "lucide-react";
 import { Section, SectionHeader } from "@/components/ui/Section";
 import { testimonials } from "@/data/testimonials";
+import { motion } from "framer-motion";
+import { Quote } from "lucide-react";
 
 export function Testimonials() {
   return (

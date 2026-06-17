@@ -1,11 +1,11 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { ArrowRight, Play } from "lucide-react";
+import { FinanceMetricCard } from "@/components/fintech/FinanceMetricCard";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
-import { FinanceMetricCard } from "@/components/fintech/FinanceMetricCard";
 import { dashboardMetrics } from "@/data/metrics";
+import { motion } from "framer-motion";
+import { ArrowRight, Play } from "lucide-react";
 
 export function Hero() {
   return (

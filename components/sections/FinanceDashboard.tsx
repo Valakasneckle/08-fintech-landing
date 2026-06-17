@@ -1,12 +1,12 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { FinanceMetricCard } from "@/components/fintech/FinanceMetricCard";
 import { TransactionCard } from "@/components/fintech/TransactionCard";
 import { Section, SectionHeader } from "@/components/ui/Section";
 import { dashboardMetrics, spendingCategories } from "@/data/metrics";
 import { transactions } from "@/data/transactions";
 import { formatCurrency } from "@/lib/format";
+import { motion } from "framer-motion";
 
 export function FinanceDashboard() {
   return (

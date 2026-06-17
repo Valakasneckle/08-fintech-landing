@@ -1,10 +1,10 @@
 import {
-  Lock,
-  ShieldCheck,
-  KeyRound,
-  ScrollText,
-  Eye,
   Building2,
+  Eye,
+  KeyRound,
+  Lock,
+  ScrollText,
+  ShieldCheck,
   type LucideIcon,
 } from "lucide-react";
 
